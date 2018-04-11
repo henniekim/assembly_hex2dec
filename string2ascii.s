@@ -18,48 +18,48 @@ string2ascii proc
 				cmp r5, #0x10000; 1000~ffff
 				blt	one_zero
 ;---------------------------------------------
-						and	r0, r5, #0x000F0000 ; get hex 4
-						asr r0, #16 ;						shift right to handle easy
-						ldrb r0, [r6,r0]	;				load r0 from [table address + offset]
+				and	r0, r5, #0x000F0000 ; get hex 4
+				asr r0, #16 ;						shift right to handle easy
+				ldrb r0, [r6,r0]	;				load r0 from [table address + offset]
 ;		
 first_zero			and	r1, r5, #0x0000F000 ; get hex 3
-						asr r1, #12;						shit right to handle easy
-						ldrb r1, [r6,r1]
+				asr r1, #12;						shit right to handle easy
+				ldrb r1, [r6,r1]
 ;
-second_zero	and	r2, r5, #0x00000F00 ; get hex 2
-						asr r2, #8
-						ldrb r2, [r6,r2]
+second_zero			and	r2, r5, #0x00000F00 ; get hex 2
+				asr r2, #8
+				ldrb r2, [r6,r2]
 ;				
-third_zero		and 	r3, r5, #0x000000F0 ; get hex 1
-						asr r3, #4
-						ldrb r3, [r6,r3]
+third_zero			and 	r3, r5, #0x000000F0 ; get hex 1
+				asr r3, #4
+				ldrb r3, [r6,r3]
 ;		
-fourth_zero		and	r4, r5, #0x0000000F ; get hex 0
-						ldrb r4, [r6,r4]
+fourth_zero			and	r4, r5, #0x0000000F ; get hex 0
+				ldrb r4, [r6,r4]
 ;
-everything_zero   stmfd sp!, {r0-r4}
-							add sp, #20
-							ldmfd sp!,{r0-r6, pc}; subroutine ends here	
+everything_zero   		stmfd sp!, {r0-r4}
+				add sp, #20
+				ldmfd sp!,{r0-r6, pc}; subroutine ends here	
 ;----to make the first '0' strings to '0' not '0x30'---------
-all_zero 	mov r0, #0
+all_zero 			mov r0, #0
 				mov r1, #0
 				mov r2, #0
 				mov r3, #0
 				mov r4, #0
 				b everything_zero
-four_zero mov r0, #0
+four_zero 			mov r0, #0
 				mov r1, #0
 				mov r2, #0
 				mov r3, #0
 				b fourth_zero
-three_zero mov r0, #0
-				  mov r1, #0
-				  mov r2, #0
-				  b third_zero
-two_zero	mov r0, #0
+three_zero 			mov r0, #0
+				mov r1, #0
+				mov r2, #0
+				b third_zero
+two_zero			mov r0, #0
 				mov r1, #0
 				b second_zero
-one_zero	mov r0, #0
+one_zero			mov r0, #0
 				b first_zero
 ;------------------------------------------------
 asc_table		; table for string to ascii
