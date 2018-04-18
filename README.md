@@ -1,5 +1,6 @@
 # Assembly Hex 2 Dec 
 > 본 프로젝트는 2017년 봄학기 마이크로프로세서 중간고사 과제로 진행했던 것입니다.
+> 부족한 부분이 너무 많은 코드입니다. 
 
 
 ## 설치 방법
@@ -12,10 +13,9 @@
 
 ```
 ## 개발 환경 설정
-
-```sh
-n
-```
+Assembly language
+STM 32F103VB / ARM-Cortex m3 
+MicroVision version 4.x
  
 ## 업데이트 내역
 
