@@ -8,7 +8,7 @@ __main				proc
 						ldr	r0, hexnum
 ;-------------------------------------------------------------
 						push {r0}
-						bl			string2ascii
+						bl string2ascii
 						pop {r0}
 						sub sp, #56
 						ldmfd sp!, {r1-r5}
@@ -20,13 +20,13 @@ __main				proc
 						str r5, [r6, #0x03]
 ;-------------------------------------------------------------
 						push {r0}
-						bl			hex2dec
+						bl hex2dec
 						pop {r0}
 ;						
 						ldr r0, [sp, #0xFFFFFFD4]
 ;			
 						push {r0}
-						bl			string2ascii
+						bl string2ascii
 						pop {r0}
 						sub sp, #56
 						ldmfd sp!, {r1-r5}; parameter passing
