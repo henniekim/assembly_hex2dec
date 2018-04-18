@@ -13,9 +13,9 @@
 
 ```
 ## 개발 환경 설정
-Assembly language
-STM 32F103VB / ARM-Cortex m3 
-MicroVision version 4.x
+Assembly language  
+STM 32F103VB / ARM-Cortex m3  
+MicroVision version 4.x  
  
 ## 업데이트 내역
 
